@@ -1,32 +1,21 @@
-const { exec } = require('child_process');
-const fs = require('fs');
-
 console.log(`
 ╔═══════════════════════╗
 ║  🚀 𝐃𝐄𝐏𝐋𝐎𝐘𝐌𝐄𝐍𝐓       ║
 ║ ✨ 𝚴𝚯𝚻 𝐔𝚪 𝚴𝚰𝐋 🔥     ║
+║ 📞 923474810818       ║
 ╚═══════════════════════╝
 `);
 
-// Check Node version
+const { exec } = require('child_process');
+
+console.log('📦 Checking Node.js version...');
 exec('node --version', (err, stdout) => {
-    console.log(`📦 Node.js Version: ${stdout}`);
+    console.log(`✅ Node.js: ${stdout}`);
 });
 
-// Install dependencies
-console.log('📥 Installing dependencies...');
-exec('npm install', (err, stdout, stderr) => {
+console.log('🚀 Starting NIL Bot...');
+exec('npm start', (err, stdout, stderr) => {
     if (err) {
-        console.error('❌ Installation failed:', err);
-        return;
+        console.error('❌ Error:', err);
     }
-    console.log('✅ Dependencies installed successfully!');
-    
-    // Start bot
-    console.log('🚀 Starting NIL Bot...');
-    exec('npm start', (err, stdout, stderr) => {
-        if (err) {
-            console.error('❌ Bot failed to start:', err);
-        }
-    });
 });
